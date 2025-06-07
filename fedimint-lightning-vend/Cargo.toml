@@ -1,0 +1,38 @@
+[package]
+name = "fedimint-lightning-vend"
+version = "0.1.0"
+edition = "2024"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+bincode = { workspace = true }
+bip39 = "2.1.0"
+bitcoin = "0.32.6"
+dashmap = "6.1.0"
+fedimint-api-client = { workspace = true }
+fedimint-bip39 = "0.7.2"
+fedimint-client = { workspace = true }
+fedimint-core = { workspace = true }
+fedimint-derive-secret = { workspace = true }
+fedimint-lnv2-common = { workspace = true }
+fedimint-lnv2-remote-client = "0.0.3"
+fedimint-mint-client = { workspace = true }
+fedimint-rocksdb = { workspace = true }
+iroh = { workspace = true }
+iroh-blobs = { workspace = true }
+iroh-docs = { workspace = true }
+lightning-invoice = { workspace = true }
+machine = { workspace = true }
+n0-future = { workspace = true }
+quic-rpc = { workspace = true }
+serde_json = { workspace = true }
+shared = { workspace = true }
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+tokio = { workspace = true }

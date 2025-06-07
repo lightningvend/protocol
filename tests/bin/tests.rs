@@ -1,7 +1,3 @@
-use devimint::cmd;
-use devimint::devfed::DevJitFed;
-use devimint::federation::Client;
-
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     println!("Starting devimint test...");

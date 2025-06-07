@@ -164,18 +164,6 @@ impl MachineProtocol {
             .ok_or_else(|| anyhow::anyhow!("claim channel closed"))
     }
 
-    pub async fn share_machine_doc(
-        &self,
-        mode: ShareMode,
-        addr_info_options: AddrInfoOptions,
-    ) -> anyhow::Result<DocTicket> {
-        self.get_or_create_machine_doc()
-            .await
-            .unwrap()
-            .share(mode, addr_info_options)
-            .await
-    }
-
     pub async fn write_payment_to_machine_doc(
         &self,
         federation_id: &FederationId,

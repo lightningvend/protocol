@@ -2993,6 +2993,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "fedimint-lightning-vend"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bincode 2.0.1",
+ "bip39",
+ "bitcoin",
+ "dashmap",
+ "fedimint-api-client",
+ "fedimint-bip39",
+ "fedimint-client",
+ "fedimint-core",
+ "fedimint-derive-secret",
+ "fedimint-lnv2-common",
+ "fedimint-lnv2-remote-client",
+ "fedimint-mint-client",
+ "fedimint-rocksdb",
+ "iroh",
+ "iroh-blobs",
+ "iroh-docs",
+ "lightning-invoice",
+ "machine",
+ "n0-future",
+ "quic-rpc",
+ "serde_json",
+ "shared",
+ "tempfile",
+ "tokio",
+ "tokio-stream",
+]
+
+[[package]]
 name = "fedimint-ln-client"
 version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3121,6 +3153,32 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.12",
+]
+
+[[package]]
+name = "fedimint-lnv2-remote-client"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8057e904ad4e21526c7f428ab2d578a901e361dd69ae3ede5090c931704ecf8d"
+dependencies = [
+ "anyhow",
+ "async-stream",
+ "async-trait",
+ "bitcoin",
+ "erased-serde 0.4.6",
+ "fedimint-api-client",
+ "fedimint-client",
+ "fedimint-client-module",
+ "fedimint-core",
+ "fedimint-lnv2-common",
+ "fedimint-tpe",
+ "futures",
+ "lightning-invoice",
+ "rand 0.8.5",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.12",
+ "tracing",
 ]
 
 [[package]]
@@ -6064,6 +6122,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "machine-fedimint"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bincode 2.0.1",
+ "fedimint-core",
+ "fedimint-lightning-vend",
+ "fedimint-lnv2-common",
+ "iroh",
+ "iroh-blobs",
+ "iroh-docs",
+ "machine",
+ "n0-future",
+ "quic-rpc",
+ "serde_json",
+ "shared",
+ "tempfile",
+ "tokio",
+]
+
+[[package]]
 name = "macro_rules_attribute"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8797,6 +8876,7 @@ version = "1.0.140"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "20068b6e96dc6c9bd23e01df8827e6c7e1f2fddd43c21810382803c136b99373"
 dependencies = [
+ "indexmap 2.9.0",
  "itoa",
  "memchr",
  "ryu",
@@ -9435,6 +9515,7 @@ dependencies = [
  "devimint",
  "fedimint-core",
  "fedimint-lnv2-common",
+ "fedimint-lnv2-remote-client",
  "fedimint-tpe",
  "iroh-docs",
  "machine",

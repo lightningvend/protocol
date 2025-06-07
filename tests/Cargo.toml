@@ -11,6 +11,9 @@ path = "bin/tests.rs"
 [dependencies]
 anyhow = { workspace = true }
 devimint = { workspace = true }
+fedimint-lnv2-remote-client = { workspace = true }
+machine = { workspace = true }
+manager = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
