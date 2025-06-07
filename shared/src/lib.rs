@@ -1,6 +1,8 @@
 use std::path::{Path, PathBuf};
 
-use fedimint_core::{config::FederationId, db::DatabaseValue, invite_code::InviteCode};
+use fedimint_core::{
+    config::FederationId, db::DatabaseValue, invite_code::InviteCode, secp256k1::PublicKey,
+};
 use fedimint_lnv2_common::contracts::IncomingContract;
 use iroh::{
     Endpoint, SecretKey,
@@ -22,6 +24,7 @@ const CLAIM_EXPORT_LABEL: &[u8] = b"machine-claim-pin";
 #[derive(Serialize, Deserialize, PartialEq, Eq, Debug)]
 pub struct MachineConfig {
     pub federation_invite_code: InviteCode,
+    pub claimer_pk: PublicKey,
 }
 
 const IROH_SUBDIR: &str = "iroh";

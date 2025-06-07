@@ -134,7 +134,7 @@ impl MachineProtocol {
         shared_protocol.router_builder = shared_protocol.router_builder.accept(CLAIM_ALPN, handler);
 
         Ok(Self {
-            router: shared_protocol.router_builder.spawn(),
+            router: shared_protocol.router_builder.spawn().await?,
             blobs: shared_protocol.blobs,
             docs: shared_protocol.docs,
             app_storage_path: shared_protocol.app_storage_path,
@@ -162,18 +162,6 @@ impl MachineProtocol {
             .recv()
             .await
             .ok_or_else(|| anyhow::anyhow!("claim channel closed"))
-    }
-
-    pub async fn share_machine_doc(
-        &self,
-        mode: ShareMode,
-        addr_info_options: AddrInfoOptions,
-    ) -> anyhow::Result<DocTicket> {
-        self.get_or_create_machine_doc()
-            .await
-            .unwrap()
-            .share(mode, addr_info_options)
-            .await
     }
 
     pub async fn write_payment_to_machine_doc(
